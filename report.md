@@ -24,7 +24,7 @@ Metasploitable2 가상머신을 대상으로 수행한 취약점 점검 결과�
 
 ### 2.1 대상 시스템
 - **Target**: Metasploitable2 (192.168.118.129)
-- **Attacker**: Kali Linux 2024.x (192.168.118.128)
+- **Attacker**: Kali Linux 2026.3 (192.168.118.128)
 
 ### 2.2 네트워크 구성
 - VMware Workstation Pro 17 기반 가상 환경
