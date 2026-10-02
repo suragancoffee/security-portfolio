@@ -6,10 +6,10 @@
 
 ## About Me
 
-- 소속: [학교명] 정보통신공학과 [학년]
+- 소속: [명지대학교] 정보통신공학과 
 - 관심 분야: 모의해킹(Penetration Testing), 웹 보안, 네트워크 보안
 - 목표: 보안관제 / 모의해킹 직무 취업
-- Contact: [이메일] / [블로그 또는 LinkedIn]
+- Contact: 2ggg2000@7gmail.com
 
 ## 학습 환경
 
