@@ -26,7 +26,7 @@
 
 | # | 프로젝트 | 대상 | 주요 내용 | 링크 |
 |---|---|---|---|---|
-| 01 | Metasploitable2 취약점 점검 | Metasploitable2 | VSFTPD 백도어(CVE-2011-2523) 침투, 권한 획득 | [report.md](./01-metasploitable2/report1.md) |
+| 01 | Metasploitable2 취약점 점검 | Metasploitable2 | VSFTPD 백도어(CVE-2011-2523) 침투, 권한 획득 | [report.md](./01-metasploitable2/report1.md),[report.md](./01-metasploitable2/report2.md)|
 | 02 | SQL Injection 취약점 점검 | DVWA | SQL Injection(인증 우회, UNION 추출), 해시 크랙, 난이도별 비교 | [report.md](./02-dvwa/report1.md) |
 | 03 | (추가 예정) | HTB/THM | 머신 풀이 write-up | - |
 
