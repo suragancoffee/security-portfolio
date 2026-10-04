@@ -79,7 +79,8 @@ SQL 쿼리문에 직접 삽입한다. 이로 인해 공격자가 SQL 구문을 �
    입력값: ' OR '1'='1
    ```
    → WHERE 조건이 항상 참이 되어, 전체 사용자 5명의 정보가 한 번에 노출됨
-   > [스크린샷 삽입: Low - ' OR '1'='1 결과 (admin/Gordon/Hack/Pablo/Bob 5명 출력)]
+   > <img width="926" height="498" alt="image" src="https://github.com/user-attachments/assets/d3cd4e83-afbf-4708-8a86-7fdbd4c375f8" />
+
 
 3. **컬럼 개수 확인**
    ```
@@ -87,7 +88,8 @@ SQL 쿼리문에 직접 삽입한다. 이로 인해 공격자가 SQL 구문을 �
    ' ORDER BY 3-- -   → Unknown column '3' in 'order clause' 에러
    ```
    → 컬럼 수가 2개임을 확인
-   > [스크린샷 삽입: ORDER BY 3 에러 화면]
+   > <img width="976" height="535" alt="image" src="https://github.com/user-attachments/assets/efb0afd6-8619-464b-8e88-84f915e64307" />
+
 
 4. **UNION 기반 데이터 추출**
    ```
@@ -101,7 +103,8 @@ SQL 쿼리문에 직접 삽입한다. 이로 인해 공격자가 SQL 구문을 �
    pablo   : 0d107d09f5bbe40cade3de5c71e9e9b7
    smithy  : 5f4dcc3b5aa765d61d8327deb882cf99
    ```
-   > [스크린샷 삽입: UNION SELECT 결과 - 비밀번호 해시 노출]
+   > <img width="750" height="490" alt="image" src="https://github.com/user-attachments/assets/9e2118c6-417e-4258-93f3-04a9a78e0f01" />
+
 
 5. **탈취한 해시 크랙 (John the Ripper)**
    ```bash
@@ -111,7 +114,8 @@ SQL 쿼리문에 직접 삽입한다. 이로 인해 공격자가 SQL 구문을 �
    # 결과: ?:password
    ```
    → 사전 공격으로 해시가 수 초 내 평문 `password`로 크랙됨
-   > [스크린샷 삽입: john 크랙 성공 결과]
+   > <img width="1084" height="638" alt="image" src="https://github.com/user-attachments/assets/70102e1f-ef91-4314-b69c-8ef16438d76a" />
+
 
 **[Medium 레벨 — 우회 테스트]**
 
@@ -125,14 +129,16 @@ SQL 쿼리문에 직접 삽입한다. 이로 인해 공격자가 SQL 구문을 �
    ```
    → 드롭다운을 거치지 않고 GET 파라미터를 직접 조작하여 **Low와 동일하게
    전체 사용자 정보 노출**
-   > [스크린샷 삽입: Medium - URL 직접 조작으로 전체 사용자 노출]
+   > <img width="996" height="645" alt="image" src="https://github.com/user-attachments/assets/ceaab1e3-71f9-411d-b9f3-41dcb235aa3d" />
+
 
 8. **UNION 공격도 동일하게 성공**
    ```
    http://localhost:8080/vulnerabilities/sqli/?id=1' UNION SELECT user, password FROM users-- -&Submit=Submit
    ```
    → Medium 레벨에서도 **비밀번호 해시 전체 추출 성공**
-   > [스크린샷 삽입: Medium - UNION SELECT로 해시 전체 추출]
+   > <img width="995" height="717" alt="image" src="https://github.com/user-attachments/assets/fa24085c-0e9d-47ef-870d-8447f00d91c0" />
+
 
 #### 영향 (Impact)
 - 인증 없이 전체 사용자 계정 정보 및 비밀번호 해시 탈취 가능
