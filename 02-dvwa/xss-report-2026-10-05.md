@@ -50,7 +50,8 @@ DVWA의 XSS 페이지는 사용자 입력값을 충분히 이스케이프하지 
    ```
    → 실제 공격에서는 이 값을 외부 서버로 전송하여 세션을 탈취하고,
    로그인 없이 피해자로 위장할 수 있다.
-   > [스크린샷 삽입: document.cookie 노출 결과]
+   > <img width="945" height="641" alt="image" src="https://github.com/user-attachments/assets/acff80ae-3152-4df0-ad62-09b6f6a2030a" />
+
 
 **[Low 레벨 — Stored XSS]**
 
@@ -60,14 +61,16 @@ DVWA의 XSS 페이지는 사용자 입력값을 충분히 이스케이프하지 
    Message: <script>alert('Stored XSS')</script>
    ```
    → 등록 즉시 알림창 실행
-   > [스크린샷 삽입: Stored XSS 등록 시 alert 팝업]
+   > <img width="863" height="568" alt="image" src="https://github.com/user-attachments/assets/176ff467-943b-4444-bf03-07519a9a2931" />
+
 
 4. **영구 저장 여부 확인**
    입력을 다시 하지 않고 메뉴에서 "XSS (Stored)" 페이지를 재방문
    → **입력 없이 페이지에 진입만 해도 알림창이 자동 실행됨**을 확인
    → 악성 스크립트가 DB에 영구 저장되어, 이 방명록을 보는 모든 사용자가
    공격 대상이 됨을 의미
-   > [스크린샷 삽입: 재방문 시 자동 실행되는 팝업]
+   > <img width="791" height="476" alt="image" src="https://github.com/user-attachments/assets/44aae38a-6d1f-4037-acc6-e2a80f8e73fd" />
+
 
 **[Medium 레벨 — 우회 테스트]**
 
@@ -77,7 +80,8 @@ DVWA의 XSS 페이지는 사용자 입력값을 충분히 이스케이프하지 
    ```
    → Message 필드는 `strip_tags()` 방식으로 거의 모든 HTML 태그를 제거하여
    `<script>` 태그가 완전히 사라지고 텍스트만 남음 (1차 방어는 유효)
-   > [스크린샷 삽입: Medium - script 태그 필터링된 결과]
+   > <img width="724" height="434" alt="image" src="https://github.com/user-attachments/assets/2e25f957-ad6e-4534-87b3-1dfc3e1abd58" />
+
 
 6. **필드별 방어 수준 차이 분석**
    동일한 페이로드를 **Name 필드**에 입력 시, 태그 자체는 필터링되지 않고
@@ -97,7 +101,8 @@ DVWA의 XSS 페이지는 사용자 입력값을 충분히 이스케이프하지 
    → `<input name="txtName" ... maxlength="10">` 속성으로 인해 입력값이
    10자에서 강제로 잘린 것이 원인이었음 (필터링이 아닌 **HTML 입력 길이
    제한**이 원인)
-   > [스크린샷 삽입: 페이지 소스에서 payload가 잘려있는 부분]
+   > <img width="1029" height="592" alt="image" src="https://github.com/user-attachments/assets/7aef8adc-a16b-4fd3-91d2-a5fa85526cd2" />
+
 
 8. **maxlength 우회 (브라우저 개발자 도구 사용)**
    `maxlength`는 클라이언트 측(HTML) 제약일 뿐 서버 측 검증이 아니므로,
@@ -105,7 +110,8 @@ DVWA의 XSS 페이지는 사용자 입력값을 충분히 이스케이프하지 
    ```
    maxlength="10" → maxlength="200"
    ```
-   > [스크린샷 삽입: 개발자 도구에서 maxlength 속성 수정 전/후]
+   > <img width="1095" height="580" alt="image" src="https://github.com/user-attachments/assets/9b4b7691-490b-4c21-9bf5-3132af187b59" />
+
 
 9. **우회 성공**
    속성 수정 후 동일 페이로드 재입력
@@ -114,7 +120,8 @@ DVWA의 XSS 페이지는 사용자 입력값을 충분히 이스케이프하지 
    Message: test
    ```
    → **알림창(`1`) 실행 성공**, Medium 레벨의 Name 필드 방어를 완전히 우회
-   > [스크린샷 삽입: maxlength 우회 후 alert(1) 팝업 성공]
+   > <img width="981" height="587" alt="image" src="https://github.com/user-attachments/assets/f607f19b-3507-4506-8287-ef062c2aa1b1" />
+
 
 ### 영향 (Impact)
 - Reflected XSS: 피해자가 악성 링크를 클릭하는 즉시 임의 스크립트 실행,
