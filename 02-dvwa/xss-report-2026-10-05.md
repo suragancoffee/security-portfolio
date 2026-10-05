@@ -35,7 +35,10 @@ DVWA의 XSS 페이지는 사용자 입력값을 충분히 이스케이프하지 
    입력값 (name 파라미터): <script>alert('XSS')</script>
    ```
    → 입력 즉시 `XSS` 알림창이 실행됨
-   > [스크린샷 삽입: Reflected XSS - alert('XSS') 팝업]
+   ><img width="993" height="552" alt="image" src="https://github.com/user-attachments/assets/e78560f2-a825-443d-9966-e5cc17f0785b" />
+ 
+   <img width="836" height="483" alt="image" src="https://github.com/user-attachments/assets/5a6522cf-90bf-4d38-9900-195d9b7c137a" />
+
 
 2. **세션 쿠키 탈취 시나리오 검증**
    ```
