@@ -197,7 +197,7 @@ DVWA의 XSS 페이지는 사용자 입력값을 충분히 이스케이프하지 
    >  <img width="836" height="483" alt="image" src="https://github.com/user-attachments/assets/ca52eb31-1edd-48f5-98b7-5b9f1bfb6ebd" />
 
 
-3. **세션 쿠키 탈취 시나리오 검증**
+2. **세션 쿠키 탈취 시나리오 검증**
    ```
    입력값: <script>alert(document.cookie)</script>
    ```
